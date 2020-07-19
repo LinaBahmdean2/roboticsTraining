@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+.button {
+  background-color: #FFFF; /* Green */
+  border: none;
+  color: white;
+  margin-top: 90px; 
+}
+
+.image {
+    width:50px; 
+    height:50px;
+}
+
+.top {
+  position: absolute;
+  bottom: 545px;
+}
+
+.down {
+  position: absolute;
+  top: 145px;
+}
+
+.section {
+  position: absolute;
+  top: 180px;
+}
+
+</style>
+
+    <title>
+        How to call PHP function
+        on the click of a Button ?
+    </title>
+</head>
+
+<body style="text-align:center;">
+
+    <h1 style="color: #e60000;">
+        Move the Robot
+    </h1>
+
+
+<!--
+    <form action="/test.php" method="get">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <button type="submit">Submit</button>
+        <button type="submit" formaction="/action_page2.php">Submit to another page</button>
+      </form>
+    -->
+
+    <form method="post">
+    
+        <button class= "button" type="submit" name="move_left" formaction="/test2.php"><img class= "image" src="l.png"></button>
+        <button class= "button top" type="submit" name="move_forward" formaction="/test2.php"><img class= "image" src="f.png"></button>
+        <button class= "button down" type="submit" name="move_backward" formaction="/test2.php"><img class= "image" src="b.png"></button>
+        <button class= "button" type="submit" name="stop"><img class= "image" src="stop.png"></button>
+        <button class= "button" type="submit" name="move_right" formaction="/test2.php"><img class= "image" src="r.png"></button>
+
+
+
+    </form>
+
+    </head>
+
+</html>
