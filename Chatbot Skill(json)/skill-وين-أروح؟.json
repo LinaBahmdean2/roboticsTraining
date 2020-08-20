@@ -1,0 +1,279 @@
+{
+  "intents": [
+    {
+      "intent": "شكر",
+      "examples": [
+        {
+          "text": "ماتقصر"
+        },
+        {
+          "text": "جزاك الله خير"
+        },
+        {
+          "text": "شكرا"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "بارد",
+      "examples": [
+        {
+          "text": "الباردة"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "احتاج_للسفر",
+      "examples": [
+        {
+          "text": "وين اسافر"
+        },
+        {
+          "text": "ابا اسافر"
+        },
+        {
+          "text": "وين افضل مكان اروحه"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ترحيب",
+      "examples": [
+        {
+          "text": "صباح الخير"
+        },
+        {
+          "text": "مرحبا"
+        },
+        {
+          "text": "مساء الخير"
+        },
+        {
+          "text": "هلا"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "حار",
+      "examples": [
+        {
+          "text": "الحارة"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "sys-percentage",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-time",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "حار",
+      "output": {
+        "generic": [
+          {
+            "title": "هذي أجمل الأماكن الحارة  اللي ممكن تروحها",
+            "options": [
+              {
+                "label": "ماليزيا",
+                "value": {
+                  "input": {
+                    "text": "1"
+                  }
+                }
+              },
+              {
+                "label": "دبي",
+                "value": {
+                  "input": {
+                    "text": "2"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#حار",
+      "dialog_node": "node_5_1597936292261",
+      "previous_sibling": "مرحبا"
+    },
+    {
+      "type": "standard",
+      "title": "ترحيب",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "هلا والله"
+              },
+              {
+                "text": "يا هلا"
+              },
+              {
+                "text": "آمرني"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#ترحيب",
+      "dialog_node": "node_6_1597935015038",
+      "previous_sibling": "node_7_1597875423663"
+    },
+    {
+      "type": "standard",
+      "title": "بارد",
+      "output": {
+        "generic": [
+          {
+            "title": "هذي أجمل الأماكن الباردة  اللي ممكن تروحها",
+            "options": [
+              {
+                "label": "فنلندا",
+                "value": {
+                  "input": {
+                    "text": "1"
+                  }
+                }
+              },
+              {
+                "label": "كندا",
+                "value": {
+                  "input": {
+                    "text": "2"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#بارد",
+      "dialog_node": "node_6_1597935583802",
+      "previous_sibling": "node_5_1597936292261"
+    },
+    {
+      "type": "standard",
+      "title": "وين_اروح",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "لا تشيل هم، بوصلك للمكان المناسب"
+              },
+              {
+                "text": "تحب المناطق الحارة ولا الباردة؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#احتاج_للسفر",
+      "dialog_node": "node_7_1597875423663",
+      "previous_sibling": "node_6_1597935583802"
+    },
+    {
+      "type": "standard",
+      "title": "أي شيء آخر",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "عيد علي السؤال بصيغة تانية، إذا ممكن"
+              },
+              {
+                "text": "مافهمتك"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "أي شيء آخر",
+      "previous_sibling": "node_6_1597935015038",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "مرحبا",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "اتفضل، معاك خبير السفر الافتراضي"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "مرحبا"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": ":هل قصدت",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "كل ما سبق خطأ"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": ":هل قصدت"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "وين أروح؟",
+  "language": "ar",
+  "description": ""
+}
