@@ -18,7 +18,7 @@
 
 .top {
   position: absolute;
-  bottom: 600px;
+  bottom: 550px;
 }
 
 .down {
@@ -68,6 +68,26 @@
 
 
     </form>
+
+
+
+
+    <script>
+      window.watsonAssistantChatOptions = {
+          integrationID: "3c20f8e5-c69b-4dc7-ac83-c4b690484788", // The ID of this integration.
+          region: "au-syd", // The region your integration is hosted in.
+          serviceInstanceID: "15d7242a-485a-4a06-9140-fe8cc4e30e54", // The ID of your service instance.
+          onLoad: function(instance) { instance.render(); }
+        };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+        document.head.appendChild(t);
+      });
+    </script>
+
+
+
 
     </body>
 
